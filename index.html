@@ -9,15 +9,13 @@
 
 <section class="calculator">
 
-<form>
-  <input type="text" name="" class="screen">
-</form>
+  <input type="text" name="" class="screen" onkeypress="enterKeyPressed(event)" >
 
 <div class="buttons">
 
   <!-- yellow -->
-<button name="button" class="btn btn-yellow" data-num="*">*</button>
-<button name="button" class="btn btn-yellow" data-num="/">/</button>
+<button name="button" class="btn btn-yellow" data-num="*">×</button>
+<button name="button" class="btn btn-yellow" data-num="/">÷</button>
 <button name="button" class="btn btn-yellow" data-num="-">-</button>
 <button name="button" class="btn btn-yellow" data-num="+">+</button>
 
@@ -38,7 +36,7 @@
 <button name="button" class="btn btn-grey" data-num="3">3</button>
 <button name="button" class="btn btn-grey" data-num=".">.</button>
 <button name="button" class="btn btn-grey" data-num="0">0</button>
-<button name="button" class="btn btn-grey" data-num=""></button>
+<button name="button" class="btn btn-grey btn-secret" data-num=""></button>
 </div>
 
 </section>
