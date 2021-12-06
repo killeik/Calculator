@@ -2,6 +2,7 @@ const btns = document.querySelectorAll('.btn');
 const screen = document.querySelector('.screen');
 const equal_btn = document.querySelector('.btn-equal');
 const clear_btn = document.querySelector('.btn-clear');
+const delete_btn = document.querySelector('.btn-delete');
 
 for(let i=0; i<btns.length; i++){
   btns[i].addEventListener('click', function(){
@@ -20,4 +21,7 @@ equal_btn.addEventListener('click', function(){
 })
 clear_btn.addEventListener('click', function(){
   screen.value = "";
+})
+delete_btn.addEventListener('click', function(){
+  screen.value = screen.value.slice(0, screen.value.length - 1)
 })
