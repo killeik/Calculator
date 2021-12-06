@@ -14,7 +14,7 @@ for(let i=0; i<btns.length; i++){
 
 equal_btn.addEventListener('click', function(){
   if(screen.value != ''){
-    let value = eval(screen.value);
+    let value = window.Function(screen.value);
     screen.value = value;
   }
 })
