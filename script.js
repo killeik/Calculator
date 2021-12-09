@@ -1,4 +1,4 @@
-const btns = document.querySelectorAll('.btn');
+const buttons = document.querySelectorAll('.btn');
 const screen = document.querySelector('.screen');
 const equal_btn = document.querySelector('.btn-equal');
 const clear_btn = document.querySelector('.btn-clear');
@@ -10,19 +10,18 @@ function deleteNotCalcSymbols(){
   screen.value = screen.value.replace(not_calc_symbols_filter,"")
 }
 
-for(let i=0; i<btns.length; i++){
-  btns[i].addEventListener('click', function(){
+for(let i=0; i<buttons.length; i++){
+  buttons[i].addEventListener('click', function(){
     deleteNotCalcSymbols();
-    let number = btns[i].getAttribute('data-num');
+    let number = buttons[i].getAttribute('data-num');
     screen.value += number;
   })
 }
 
 equal_btn.addEventListener('click', function(){
   deleteNotCalcSymbols();
-  if(screen.value != ''){
-    let value = eval(screen.value);
-    screen.value = value;
+  if(screen.value !== ''){
+    screen.value = eval(screen.value);
   }
 })
 clear_btn.addEventListener('click', function(){
@@ -52,14 +51,11 @@ screen.addEventListener('keydown', screenKeyPressed)
 function screenKeyPressed(event) {
   deleteNotCalcSymbols();
   switch (event.keyCode) {
-      case 13: if(screen.value != ''){ //use enter as equal button
-        let value = eval(screen.value);
-        screen.value = value;
-        return true
-        }
-      case 8: //allow use backspace
+      case 13: if(screen.value !== '') { //use enter as equal button
+        screen.value = eval(screen.value);
+      }
         return true;
-      break;
+      case 8: return true; //allow use backspace
       default:
       //prohibit the entry of letters and other not needed characters
         const calc_symbols_filter = new RegExp("[0-9./()*+-]");
